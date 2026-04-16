@@ -8,13 +8,14 @@
   --color-fondo: #040714;
   --color-fondo-card: #0e1629;
   --color-primario: #0063e5;
-  --color-primario-hover: #0483ee;
+  --color-cyan: #00d4f5;
+  --color-cyan-hover: #00b8d9;
   --color-texto: #ffffff;
-  --color-texto-suave: #8899aa;
+  --color-texto-suave: #a0aec0;
   --color-borde: #1a2840;
   --fuente-titulo: 'Bebas Neue', sans-serif;
   --fuente-cuerpo: 'Nunito', sans-serif;
-  --radio-borde: 6px;
+  --radio-borde: 4px;
 }
 
 /* ── RESET Y BASE ── */
@@ -25,7 +26,7 @@
   box-sizing: border-box;
 }
 
-/* Elemento: selector de tipo aplicado al body */
+/* Elemento: selector de tipo body */
 body {
   background-color: var(--color-fondo);
   color: var(--color-texto);
@@ -49,7 +50,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.4rem 6rem;
+  padding: 1.2rem 3rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -58,130 +59,124 @@ a {
 }
 
 .logo-img {
-  height: 44px;
+  height: 40px;
   width: auto;
 }
 
-.navbar__links a {
-  font-size: 1rem;
+/* Clase: botón de login en navbar
+   Decisión de especificidad: usamos .btn-login en vez de .navbar a
+   para poder reutilizar el estilo si hubiera otros links en el nav */
+.btn-login {
+  font-size: 1.5rem;
   font-weight: 700;
-  padding: 0.6rem 1.6rem;
+  padding: 0.3rem 1.7rem;
   border: 2px solid var(--color-texto);
   border-radius: var(--radio-borde);
-  letter-spacing: 0.04em;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  letter-spacing: 0.03em;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
-/* Pseudo-selector :hover — usamos .navbar__links a:hover en vez de solo a:hover
-   para que este estilo SOLO aplique al botón del nav, no a todos los <a> del documento */
-.navbar__links a:hover {
-  background-color: var(--color-primario);
-  border-color: var(--color-primario);
+/* Pseudo-selector: :hover en el botón de login */
+.btn-login:hover {
+  background-color: rgba(255,255,255,0.15);
 }
 
 /* ── HERO ── */
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 8rem 2rem 4rem;
-  background:
-    linear-gradient(to bottom, rgba(4, 7, 20, 0.3) 0%, rgba(4, 7, 20, 0.7) 60%, #040714 100%),
-    radial-gradient(ellipse at 50% 40%, rgba(0, 99, 229, 0.35) 0%, transparent 70%);
+  padding: 8rem 3rem 4rem;
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(to right, rgba(4,7,20,0.92) 45%, rgba(4,7,20,0.4) 100%),
+    url("img/daredevil.jpg");
+
+  background-size: cover;
+  background-position: 75% right;
+  background-repeat: no-repeat;
 }
 
 .hero__content {
-  max-width: 680px;
-  width: 100%;
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
 }
 
 /* Elemento: h1 con fuente titular grande */
 h1 {
-  font-family: var(--fuente-titulo);
-  font-size: 5.5rem;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  margin-bottom: 1.4rem;
-  text-transform: uppercase;
+  font-family: var(--fuente-cuerpo);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
 }
 
 .hero__subtitle {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--color-texto-suave);
-  margin-bottom: 3rem;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
 /* ── FORMULARIO ── */
 .hero__form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1.2rem;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+  max-width: 300px;
 }
 
-/* Clase: selector de clase para todos los inputs */
+/* Clase: todos los inputs del formulario */
 .form__input {
   width: 100%;
-  padding: 1.1rem 1.4rem;
-  background-color: rgba(255, 255, 255, 0.07);
-  border: 1.5px solid var(--color-borde);
+  padding: 1rem 1.2rem;
+  background-color: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.2);
   border-radius: var(--radio-borde);
   color: var(--color-texto);
   font-family: var(--fuente-cuerpo);
   font-size: 1rem;
   outline: none;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition: border-color 0.2s, background-color 0.2s;
 }
 
-/* Pseudo-selector :focus — .form__input:focus tiene más peso que input:focus genérico,
-   así controlamos exactamente qué inputs se resaltan sin afectar otros del documento */
+/* Pseudo-selector: :focus para resaltar el input activo
+   Decisión de especificidad: .form__input:focus es más específico que input:focus
+   así solo afecta a los inputs del formulario y no a otros elementos interactivos */
 .form__input:focus {
-  border-color: var(--color-primario);
-  background-color: rgba(0, 99, 229, 0.1);
+  border-color: var(--color-cyan);
+  background-color: rgba(0,212,245,0.07);
 }
 
 .form__input::placeholder {
   color: var(--color-texto-suave);
 }
 
-.form__select {
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-.form__select option {
-  background-color: var(--color-fondo-card);
-  color: var(--color-texto);
-}
-
-/* Clase: selector de clase para el botón principal */
+/* Clase: botón principal cyan igual al de Disney+ */
 .btn-primary {
-  width: 100%;
-  padding: 1.1rem;
-  background-color: var(--color-primario);
-  color: var(--color-texto);
+  height: 56px;
+
+  padding: 0 1.8rem;
+  background-color: var(--color-cyan);
+  color: #000000;
   border: none;
-  border-radius: var(--radio-borde);
+  border-radius: 0 6px 6px 0;
   font-family: var(--fuente-cuerpo);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition: background-color 0.2s, transform 0.15s;
 }
 
-/* Pseudo-selector :hover para el botón */
+/* Pseudo-selector: :hover en el botón principal */
 .btn-primary:hover {
-  background-color: var(--color-primario-hover);
-  transform: translateY(-2px);
+  background-color: var(--color-cyan-hover);
+  transform: translateY(-1px);
 }
 
 .btn-primary:active {
@@ -189,169 +184,388 @@ h1 {
 }
 
 .hero__disclaimer {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--color-texto-suave);
-  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.8;
 }
 
 .hero__disclaimer a {
-  color: var(--color-texto-suave);
+  color: var(--color-texto);
   text-decoration: underline;
 }
 
-.hero__disclaimer a:hover {
-  color: var(--color-texto);
-}
-
-/* ── FRANQUICIAS ── */
-.franchises {
-  padding: 6rem;
-  border-top: 1px solid var(--color-borde);
-}
-
-.franchises__title {
-  font-family: var(--fuente-titulo);
-  font-size: 2.8rem;
-  letter-spacing: 0.05em;
-  text-align: center;
-  margin-bottom: 3.5rem;
-  text-transform: uppercase;
-}
-
-.franchises__grid {
+/* ── LOGOS DE FRANQUICIAS EN LÍNEA ── */
+.hero__brands {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
-/* Clase: card de franquicia */
-.franchise-card {
-  background-color: var(--color-fondo-card);
-  border: 1.5px solid var(--color-borde);
-  border-radius: 12px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  width: 175px;
-  cursor: pointer;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* Pseudo-selector :hover para las cards */
-.franchise-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  border-color: var(--color-primario);
-  box-shadow: 0 12px 32px rgba(0, 99, 229, 0.25);
-}
-
-.franchise-card__logo {
-  height: 52px;
+.brand-logo {
+  height: 20px;
   width: auto;
-  margin: 0 auto 1.2rem;
   object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
 }
 
-.franchise-card__desc {
-  font-size: 0.83rem;
+.brand-logo--hulu {
+  filter: none;
+  opacity: 1;
+}
+
+.brand-plus {
   color: var(--color-texto-suave);
-  line-height: 1.5;
+  font-size: 1rem;
 }
 
-/* ── FEATURES ── */
-.features {
-  padding: 6rem;
-  background: linear-gradient(180deg, var(--color-fondo) 0%, var(--color-fondo-card) 100%);
-  border-top: 1px solid var(--color-borde);
+/* ── SECCIÓN ESPN ── */
+.espn-section {
+  background-image:
+    linear-gradient(to right, rgba(4,7,20,0.92) 45%, rgba(4,7,20,0.4) 100%),
+    url("img/f1.jpg");
+  padding: 4rem 3rem 0;
+  overflow: hidden;
 }
 
-.features__title {
-  font-family: var(--fuente-titulo);
-  font-size: 2.8rem;
-  letter-spacing: 0.05em;
-  text-align: center;
-  margin-bottom: 3.5rem;
-  text-transform: uppercase;
+.espn-section__content {
+  max-width: 420px;
+  padding-bottom: 3rem;
 }
 
-.features__grid {
+.espn-section__badge {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 3rem;
-  max-width: 900px;
-  margin: 0 auto;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
-.feature-item {
-  text-align: center;
-  max-width: 240px;
-}
-
-.feature-item__icon {
-  height: 60px;
+.espn-badge__logo {
+  height: 28px;
   width: auto;
-  margin: 0 auto 1.4rem;
   object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
-/* Elemento: h3 dentro de feature-item */
-.feature-item h3 {
-  font-size: 1.15rem;
+.espn-section__badge span {
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+}
+
+.espn-section__plan {
+  display: inline-block;
+  border: 1px solid var(--color-texto);
+  border-radius: 20px;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.espn-section__desc {
+  font-size: 1rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+/* Grid de cards de deportes */
+.sports-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.sport-card__img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* ── TÍTULOS DE SECCIÓN ── */
+.section-title {
+  font-family: var(--fuente-cuerpo);
+  font-size: 2rem;
   font-weight: 800;
-  margin-bottom: 0.6rem;
-  letter-spacing: 0.02em;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
-.feature-item p {
-  font-size: 0.92rem;
+.section-subtitle {
+  text-align: center;
   color: var(--color-texto-suave);
-  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ── TOP 10 HOY ── */
+.top10 {
+  padding: 5rem 3rem;
+  border-top: 1px solid var(--color-borde);
+}
+
+/* Grid para el top 10: 5 columnas */
+.top10__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 2rem auto 0;
+}
+
+.top10-card {
+  position: relative;
+}
+
+.top10-card__number {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.75rem;
+  font-family: var(--fuente-titulo);
+  font-size: 3.5rem;
+  color: var(--color-cyan);
+  line-height: 1;
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.top10-card__img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Pseudo-selector: :hover en las cards del top 10 */
+.top10-card:hover .top10-card__img {
+  opacity: 0.85;
+  transform: scale(1.02);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+/* ── RECIÉN AGREGADOS ── */
+.recently-added {
+  padding: 5rem 3rem;
+  border-top: 1px solid var(--color-borde);
+}
+
+/* Grid de 5 columnas para los posters */
+.recently-added__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 2rem auto 0;
+}
+
+.poster-card__img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+/* Pseudo-selector: :hover en los posters */
+.poster-card:hover .poster-card__img {
+  transform: scale(1.04);
+  opacity: 0.85;
+}
+
+/* ── CUANDO Y DONDE QUIERAS ── */
+.devices-section {
+  padding: 5rem 3rem;
+  border-top: 1px solid var(--color-borde);
+  text-align: center;
+}
+
+.devices-section__img-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.devices-section__img {
+  width: 100%;
+  height: auto;
+}
+
+/* ── TABLA DE PLANES ── */
+.plans-section {
+  padding: 5rem 3rem;
+  border-top: 1px solid var(--color-borde);
+}
+
+.plans-table {
+  max-width: 900px;
+  margin: 2rem auto 0;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Grid de 3 columnas para la tabla de planes */
+.plans-table__header {
+  display: grid;
+  grid-template-columns: 1fr 220px 220px;
+  background-color: var(--color-fondo-card);
+}
+
+.plans-table__feature-col {
+  padding: 2rem;
+}
+
+/* Clase: columna de plan */
+.plans-table__plan {
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  border-left: 1px solid var(--color-borde);
+}
+
+.plans-table__plan--premium {
+  background-color: var(--color-cyan);
+  color: #000;
+}
+
+.plans-table__plan--standard {
+  background-color: #1a7a6e;
+}
+
+.plans-table__plan h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.plans-table__badge {
+  display: inline-block;
+  background-color: #000;
+  color: var(--color-cyan);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.plans-table__price {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  opacity: 0.85;
+}
+
+/* Filas de la tabla */
+.plans-table__row {
+  display: grid;
+  grid-template-columns: 1fr 220px 220px;
+  border-top: 1px solid var(--color-borde);
+}
+
+/* Pseudo-selector: :nth-child par para alternar color de filas
+   Decisión de especificidad: .plans-table__row:nth-child(even) es más específico
+   que solo div:nth-child, así solo aplica a las filas de esta tabla */
+.plans-table__row:nth-child(even) {
+  background-color: rgba(255,255,255,0.02);
+}
+
+.plans-table__feature {
+  padding: 1.2rem 2rem;
+  font-size: 0.95rem;
+  color: var(--color-texto-suave);
+  display: flex;
+  align-items: center;
+}
+
+.plans-table__cell {
+  padding: 1.2rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-left: 1px solid var(--color-borde);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ── FOOTER ── */
 .footer {
   border-top: 1px solid var(--color-borde);
-  padding: 3.5rem 6rem;
-  text-align: center;
+  padding: 4rem 3rem 3rem;
   background-color: var(--color-fondo);
 }
 
-.footer__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.8rem;
-}
-
-.footer__logo {
-  height: 30px;
-  width: auto;
-  margin: 0 auto;
-  opacity: 0.6;
-}
-
-.footer__links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-/* Clase + elemento: .footer__links a es más específico que solo 'a'
-   para no sobreescribir otros enlaces del sitio */
-.footer__links a {
-  font-size: 0.88rem;
+.footer__lang {
+  font-size: 0.9rem;
   color: var(--color-texto-suave);
-  transition: color 0.2s ease;
+  margin-bottom: 2rem;
+  cursor: pointer;
 }
 
-.footer__links a:hover {
+/* Grid de 4 columnas para el footer */
+.footer__columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer__col-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
   color: var(--color-texto);
 }
 
-.footer__copy {
-  font-size: 0.78rem;
+/* Clase + elemento: .footer__col a más específico que solo a */
+.footer__col a {
+  display: block;
+  font-size: 0.85rem;
   color: var(--color-texto-suave);
+  margin-bottom: 0.8rem;
+  transition: color 0.2s;
+}
+
+.footer__col a:hover {
+  color: var(--color-texto);
+}
+
+/* Redes sociales */
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer__social a {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--color-borde);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--color-texto-suave);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+/* Pseudo-selector: :hover en íconos de redes sociales */
+.footer__social a:hover {
+  border-color: var(--color-texto);
+  color: var(--color-texto);
+}
+
+.footer__logo-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__logo {
+  height: 50px;
+  width: auto;
+  opacity: 0.9;
 }
