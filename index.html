@@ -6,34 +6,32 @@
     <title>Disney+ | Películas, series y más</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Avenir:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
  
   <body>
-    <!-- HEADER: barra de navegación principal -->
+ 
+    <!-- HEADER: navbar con logo y botón iniciar sesión -->
     <header class="navbar">
       <div class="navbar__logo">
         <img src="img/disneyplus-logo.png" alt="Logo de Disney+" class="logo-img" />
       </div>
       <nav class="navbar__links">
-        <a href="#">Iniciar sesión</a>
+        <a href="#" class="btn-login">Iniciar sesión</a>
       </nav>
     </header>
  
     <main>
-      <!-- SECCIÓN HERO: presentación principal con formulario de registro -->
-      <section class="hero">
-        <div class="hero__content">
-          <h1 class="hero__title">Todo lo que amas, en un solo lugar.</h1>
-          <p class="hero__subtitle">
-            Disney, Pixar, Marvel, Star Wars y National Geographic. Empieza a disfrutar ahora.
-          </p>
  
-          <!-- Formulario de registro con 3+ campos como pide la rúbrica -->
+      <!-- SECCIÓN HERO: fondo de película, título, formulario, logos de franquicias -->
+      <section class="hero">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <h1 class="hero__title">Series exclusivas, éxitos del cine, el deporte de ESPN y más</h1>
+          <p class="hero__subtitle">Ingresa tu correo para comenzar</p>
+ 
+          <!-- Formulario  -->
           <form class="hero__form">
             <input
               type="text"
@@ -53,91 +51,234 @@
               placeholder="Contraseña"
               aria-label="Contraseña"
             />
-            <select class="form__input form__select" aria-label="Selecciona tu plan">
-              <option value="" disabled selected>Selecciona tu plan</option>
-              <option value="basico">Básico — $7.99/mes</option>
-              <option value="premium">Premium — $13.99/mes</option>
-            </select>
-            <button type="submit" class="btn-primary">Comenzar suscripción</button>
+            <button type="submit" class="btn-primary">Suscribirme ahora</button>
           </form>
  
           <p class="hero__disclaimer">
-            Al suscribirte aceptás los <a href="#">Términos de uso</a>. Cancelá en cualquier momento.
+            Ahorra desde 30% en <a href="#">Disney+ Premium Anual</a>.<br />
+            <a href="#">Ver detalles de los planes</a>
           </p>
+ 
+          <!-- Logos de franquicias en línea -->
+          <div class="hero__brands">
+            <img src="img/disney.png" alt="Disney" class="brand-logo" />
+            <span class="brand-plus">+</span>
+            <img src="img/pixar.png" alt="Pixar" class="brand-logo" />
+            <span class="brand-plus">+</span>
+            <img src="img/marvel.png" alt="Marvel" class="brand-logo" />
+            <span class="brand-plus">+</span>
+            <img src="img/starwars.png" alt="Star Wars" class="brand-logo" />
+            <span class="brand-plus">+</span>
+            <img src="img/natgeo.png" alt="National Geographic" class="brand-logo" />
+            <span class="brand-plus">+</span>
+            <img src="img/espn.png" alt="ESPN" class="brand-logo" />
+            <span class="brand-plus">+</span>
+            <img src="img/hulu.png" alt="Hulu" class="brand-logo brand-logo--hulu" />
+          </div>
         </div>
       </section>
  
-      <!-- SECCIÓN DE FRANQUICIAS -->
-      <section class="franchises">
-        <h2 class="franchises__title">Las mejores historias del mundo</h2>
-        <div class="franchises__grid">
- 
-          <article class="franchise-card">
-            <img src="img/disney.png" alt="Logotipo de Disney clásico" class="franchise-card__logo" />
-            <p class="franchise-card__desc">Clásicos animados para toda la familia.</p>
+      <!-- SECCIÓN ESPN -->
+      <section class="espn-section">
+        <div class="espn-section__content">
+          <div class="espn-section__text">
+            <div class="espn-section__badge">
+              <img src="img/espn.png" alt="ESPN en Disney+" class="espn-badge__logo" />
+              <span>en</span>
+              <img src="img/disneyplus-logo.png" alt="Disney+" class="espn-badge__logo" />
+            </div>
+            <span class="espn-section__plan">Plan Premium</span>
+            <p class="espn-section__desc">
+              El deporte de ESPN y los eventos en vivo que te apasionan los encontrás en el plan Premium de Disney+.
+            </p>
+            <button class="btn-primary">Suscribirme ahora</button>
+          </div>
+        </div>
+        <!-- Cards de deportes -->
+        <div class="sports-cards">
+          <article class="sport-card">
+            <img src="img/champions.png" alt="UEFA Champions League" class="sport-card__img" />
           </article>
- 
-          <article class="franchise-card">
-            <img src="img/pixar.png" alt="Logotipo de Pixar Animation Studios" class="franchise-card__logo" />
-            <p class="franchise-card__desc">Historias que tocan el corazón.</p>
+          <article class="sport-card">
+            <img src="img/rolandgarros.png" alt="Roland Garros" class="sport-card__img" />
           </article>
- 
-          <article class="franchise-card">
-            <img src="img/marvel.png" alt="Logotipo de Marvel Studios" class="franchise-card__logo" />
-            <p class="franchise-card__desc">El universo de superhéroes más grande.</p>
+          <article class="sport-card">
+            <img src="img/concacaf.png" alt="Concacaf Champions Cup" class="sport-card__img" />
           </article>
- 
-          <article class="franchise-card">
-            <img src="img/starwars.png" alt="Logotipo de Star Wars" class="franchise-card__logo" />
-            <p class="franchise-card__desc">Una galaxia muy, muy lejana.</p>
+          <article class="sport-card">
+            <img src="img/mlb.png" alt="MLB Baseball" class="sport-card__img" />
           </article>
- 
-          <article class="franchise-card">
-            <img src="img/natgeo.png" alt="Logotipo de National Geographic" class="franchise-card__logo" />
-            <p class="franchise-card__desc">Explora el mundo y sus maravillas.</p>
+          <article class="sport-card">
+            <img src="img/seriea.png" alt="Serie A italiana" class="sport-card__img" />
           </article>
- 
         </div>
       </section>
  
-      <!-- SECCIÓN DE CARACTERÍSTICAS / BENEFICIOS -->
-      <section class="features">
-        <h2 class="features__title">¿Por qué Disney+?</h2>
-        <div class="features__grid">
- 
-          <div class="feature-item">
-            <img src="img/icon-devices.png" alt="Ícono de múltiples dispositivos" class="feature-item__icon" />
-            <h3>4 pantallas simultáneas</h3>
-            <p>Mirá en tu TV, tablet, celular o computadora al mismo tiempo.</p>
-          </div>
- 
-          <div class="feature-item">
-            <img src="img/icon-download.png" alt="Ícono de descarga de contenido" class="feature-item__icon" />
-            <h3>Descargá contenido</h3>
-            <p>Guardá tus películas y series favoritas para verlas sin conexión.</p>
-          </div>
- 
-          <div class="feature-item">
-            <img src="img/icon-noads.png" alt="Ícono de sin publicidad" class="feature-item__icon" />
-            <h3>Sin interrupciones</h3>
-            <p>Disfrutá tus contenidos sin cortes publicitarios.</p>
-          </div>
- 
+      <!-- SECCIÓN TOP 10 HOY -->
+      <section class="top10">
+        <h2 class="section-title">Top 10 Hoy</h2>
+        <div class="top10__grid">
+          <article class="top10-card">
+            <span class="top10-card__number"></span>
+            <img src="img/top1.png" alt="Malcolm en el medio - comedia 2026" class="top10-card__img" />
+          </article>
+          <article class="top10-card">
+            <span class="top10-card__number"></span>
+            <img src="img/top2.png" alt="Dear Killer Nannies - drama crimen 2026" class="top10-card__img" />
+          </article>
+          <article class="top10-card">
+            <span class="top10-card__number"></span>
+            <img src="img/top3.png" alt="La Corona Perfecta - drama 2026" class="top10-card__img" />
+          </article>
+          <article class="top10-card">
+            <span class="top10-card__number"></span>
+            <img src="img/top4.png" alt="Los Testamentos de las Hijas de Gilead - drama 2026" class="top10-card__img" />
+          </article>
+          <article class="top10-card">
+            <span class="top10-card__number"></span>
+            <img src="img/top5.png" alt="El Diablo Viste a la Moda - drama comedia 2006" class="top10-card__img" />
+          </article>
         </div>
       </section>
+ 
+      <!-- SECCIÓN RECIÉN AGREGADOS -->
+      <section class="recently-added">
+        <h2 class="section-title">Recién agregados</h2>
+        <div class="recently-added__grid">
+          <article class="poster-card">
+            <img src="img/recent1.png" alt="La Corona Perfecta" class="poster-card__img" />
+          </article>
+          <article class="poster-card">
+            <img src="img/recent2.png" alt="En tu mejor momento" class="poster-card__img" />
+          </article>
+          <article class="poster-card">
+            <img src="img/recent3.png" alt="FX Love Story" class="poster-card__img" />
+          </article>
+          <article class="poster-card">
+            <img src="img/recent4.png" alt="Outlander" class="poster-card__img" />
+          </article>
+          <article class="poster-card">
+            <img src="img/recent5.png" alt="Paradise" class="poster-card__img" />
+          </article>
+        </div>
+      </section>
+ 
+      <!-- SECCIÓN CUANDO Y DONDE QUIERAS -->
+      <section class="devices-section">
+        <h2 class="section-title">Cuando y donde quieras</h2>
+        <p class="section-subtitle">Disfruta tus favoritos en cualquier momento y lugar.</p>
+        <div class="devices-section__img-wrap">
+          <img src="img/cuandoquieras.png" alt="Disney+ disponible en TV, tablet, celular y computadora" class="devices-section__img" />
+        </div>
+      </section>
+ 
+      <!-- SECCIÓN PLANES -->
+      <section class="plans-section">
+        <h2 class="section-title">¿Qué plan vas a elegir?</h2>
+        <p class="section-subtitle">Podrás modificarlo o cancelarlo cuando quieras.</p>
+ 
+        <div class="plans-table">
+          <!-- Encabezados -->
+          <div class="plans-table__header">
+            <div class="plans-table__feature-col"></div>
+            <div class="plans-table__plan plans-table__plan--premium">
+              <span class="plans-table__badge">Más popular</span>
+              <h3>PREMIUM</h3>
+              <p class="plans-table__price">USD 18,99/mes*</p>
+            </div>
+            <div class="plans-table__plan plans-table__plan--standard">
+              <h3>ESTÁNDAR</h3>
+              <p class="plans-table__price">USD 13,99/mes*</p>
+            </div>
+          </div>
+ 
+          <!-- Filas de características -->
+          <div class="plans-table__row">
+            <p class="plans-table__feature">Plan anual — Disfruta de 12 meses al precio de 9**</p>
+            <p class="plans-table__cell">USD 158,99/año**</p>
+            <p class="plans-table__cell">USD 116,99/año**</p>
+          </div>
+          <div class="plans-table__row">
+            <p class="plans-table__feature">Todos los canales de ESPN, torneos y más de 500 eventos exclusivos por mes***</p>
+            <p class="plans-table__cell">✓</p>
+            <p class="plans-table__cell">—</p>
+          </div>
+          <div class="plans-table__row">
+            <p class="plans-table__feature">Estrenos de películas, series originales y clásicos de Disney, Pixar, Marvel, Star Wars, National Geographic y Hulu</p>
+            <p class="plans-table__cell">✓</p>
+            <p class="plans-table__cell">✓</p>
+          </div>
+          <div class="plans-table__row">
+            <p class="plans-table__feature">Calidad de video hasta 4K UHD/HDR y sonido Dolby Atmos****</p>
+            <p class="plans-table__cell">✓</p>
+            <p class="plans-table__cell">—</p>
+          </div>
+          <div class="plans-table__row">
+            <p class="plans-table__feature">Dispositivos para ver en simultáneo</p>
+            <p class="plans-table__cell">4</p>
+            <p class="plans-table__cell">2</p>
+          </div>
+          <div class="plans-table__row">
+            <p class="plans-table__feature">Descargas para ver tus favoritos sin conexión ni demoras</p>
+            <p class="plans-table__cell">✓</p>
+            <p class="plans-table__cell">✓</p>
+          </div>
+        </div>
+      </section>
+ 
     </main>
  
-    <!-- FOOTER -->
+    <!-- FOOTER: 4 columnas + redes sociales + logo -->
     <footer class="footer">
-      <div class="footer__content">
-        <img src="img/disneyplus-logo.png" alt="Logo de Disney+" class="footer__logo" />
-        <nav class="footer__links">
-          <a href="#">Ayuda</a>
+      <div class="footer__columns">
+        <div class="footer__col">
+          <p class="footer__lang">🌐 Español ▾</p>
+          <h4 class="footer__col-title">Más información</h4>
           <a href="#">Términos de uso</a>
           <a href="#">Política de privacidad</a>
-          <a href="#">Sobre nosotros</a>
-        </nav>
-        <p class="footer__copy">© 2024 Disney. Todos los derechos reservados.</p>
+          <a href="#">Publicidad personalizada</a>
+          <a href="#">Acuerdo de Suscripción</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Ayuda</h4>
+          <a href="#">Centro de ayuda</a>
+          <a href="#">Dispositivos compatibles</a>
+          <a href="#">Acerca de Disney+</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Marcas</h4>
+          <a href="#">Disney</a>
+          <a href="#">Pixar</a>
+          <a href="#">Marvel</a>
+          <a href="#">Star Wars</a>
+          <a href="#">National Geographic</a>
+          <a href="#">ESPN</a>
+          <a href="#">Hulu</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Colecciones</h4>
+          <a href="#">Todas las colecciones</a>
+          <a href="#">Cortos de Disney</a>
+          <a href="#">Acción y aventura</a>
+          <a href="#">Comedias</a>
+          <a href="#">Documental</a>
+          <a href="#">Drama</a>
+          <a href="#">Musicales</a>
+          <a href="#">Suspenso y misterio</a>
+        </div>
+      </div>
+ 
+      <!-- Redes sociales -->
+      <div class="footer__social">
+        <a href="#" aria-label="X (Twitter)">✕</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">◎</a>
+        <a href="#" aria-label="TikTok">♪</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+ 
+      <div class="footer__logo-wrap">
+        <img src="img/disneyplus-logo.png" alt="Logo de Disney+" class="footer__logo" />
       </div>
     </footer>
  
