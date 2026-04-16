@@ -1,7 +1,7 @@
 # tarea1-clon-web
 
 ## 📌 Descripción
-Este proyecto consiste en la clonación del sitio web de Disney+ con fines educativos, replicando su estructura visual, estilos y distribución de elementos utilizando HTML, CSS y JavaScript puro.
+Este proyecto consiste en la clonación del sitio web de Disney+ con fines educativos, replicando su estructura visual, estilos y distribución de elementos utilizando HTML y CSS puro.
 
 ---
 
@@ -23,13 +23,13 @@ Carnet: C12585
 ### Sitio original
 
 <p align="center">
-  <img src="assets/Disney1.png" width="600"><br>
-  <img src="assets/Disney2.png" width="600"><br>
-  <img src="assets/Disney3.png" width="600"><br>
-  <img src="assets/Disney4.png" width="600"><br>
-  <img src="assets/Disney5.png" width="600"><br>
-  <img src="assets/Disney6.png" width="600"><br>
-  <img src="assets/Disney7.png" width="600">
+  <img src="img/Disney1.png" width="600"><br>
+  <img src="img/Disney2.png" width="600"><br>
+  <img src="img/Disney3.png" width="600"><br>
+  <img src="img/Disney4.png" width="600"><br>
+  <img src="img/Disney5.png" width="600"><br>
+  <img src="img/Disney6.png" width="600"><br>
+  <img src="img/Disney7.png" width="600">
 </p>
 
 ---
@@ -37,21 +37,21 @@ Carnet: C12585
 ### Clon desarrollado
 
 <p align="center">
-  <img src="assets/Disneyclon1.png" width="600"><br>
-  <img src="assets/Disneyclon2.png" width="600"><br>
-  <img src="assets/Disneyclon3.png" width="600"><br>
-  <img src="assets/Disneyclon4.png" width="600"><br>
-  <img src="assets/Disneyclon5.png" width="600"><br>
-  <img src="assets/Disneyclon6.png" width="600"><br>
-  <img src="assets/Disneyclon7.png" width="600">
+  <img src="img/Disneyclon1.jpeg" width="600"><br>
+  <img src="img/Disneyclon2.jpeg" width="600"><br>
+  <img src="img/Disneyclon3.jpeg" width="600"><br>
+  <img src="img/Disneyclon4.jpeg" width="600"><br>
+  <img src="img/Disneyclon5.jpeg" width="600"><br>
+  <img src="img/Disneyclon6.jpeg" width="600"><br>
+  <img src="img/Disneyclon7.jpeg" width="600">
 </p>
 
 ---
 
 ## ⚙️ Tecnologías utilizadas
 
-- HTML
-- CSS
+- HTML5  
+- CSS3  
 
 ---
 
@@ -66,9 +66,8 @@ Carnet: C12585
 ---
 
 ## 📁 Estructura del proyecto
-
 ```bash
-/assets
+/img
   Disney1.png
   Disney2.png
   ...
