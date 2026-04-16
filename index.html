@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disney+ | Películas, series y más</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Avenir:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+ 
+  <body>
+    <!-- HEADER: barra de navegación principal -->
+    <header class="navbar">
+      <div class="navbar__logo">
+        <img src="img/disneyplus-logo.png" alt="Logo de Disney+" class="logo-img" />
+      </div>
+      <nav class="navbar__links">
+        <a href="#">Iniciar sesión</a>
+      </nav>
+    </header>
+ 
+    <main>
+      <!-- SECCIÓN HERO: presentación principal con formulario de registro -->
+      <section class="hero">
+        <div class="hero__content">
+          <h1 class="hero__title">Todo lo que amas, en un solo lugar.</h1>
+          <p class="hero__subtitle">
+            Disney, Pixar, Marvel, Star Wars y National Geographic. Empieza a disfrutar ahora.
+          </p>
+ 
+          <!-- Formulario de registro con 3+ campos como pide la rúbrica -->
+          <form class="hero__form">
+            <input
+              type="text"
+              class="form__input"
+              placeholder="Nombre completo"
+              aria-label="Nombre completo"
+            />
+            <input
+              type="email"
+              class="form__input"
+              placeholder="Correo electrónico"
+              aria-label="Correo electrónico"
+            />
+            <input
+              type="password"
+              class="form__input"
+              placeholder="Contraseña"
+              aria-label="Contraseña"
+            />
+            <select class="form__input form__select" aria-label="Selecciona tu plan">
+              <option value="" disabled selected>Selecciona tu plan</option>
+              <option value="basico">Básico — $7.99/mes</option>
+              <option value="premium">Premium — $13.99/mes</option>
+            </select>
+            <button type="submit" class="btn-primary">Comenzar suscripción</button>
+          </form>
+ 
+          <p class="hero__disclaimer">
+            Al suscribirte aceptás los <a href="#">Términos de uso</a>. Cancelá en cualquier momento.
+          </p>
+        </div>
+      </section>
+ 
+      <!-- SECCIÓN DE FRANQUICIAS -->
+      <section class="franchises">
+        <h2 class="franchises__title">Las mejores historias del mundo</h2>
+        <div class="franchises__grid">
+ 
+          <article class="franchise-card">
+            <img src="img/disney.png" alt="Logotipo de Disney clásico" class="franchise-card__logo" />
+            <p class="franchise-card__desc">Clásicos animados para toda la familia.</p>
+          </article>
+ 
+          <article class="franchise-card">
+            <img src="img/pixar.png" alt="Logotipo de Pixar Animation Studios" class="franchise-card__logo" />
+            <p class="franchise-card__desc">Historias que tocan el corazón.</p>
+          </article>
+ 
+          <article class="franchise-card">
+            <img src="img/marvel.png" alt="Logotipo de Marvel Studios" class="franchise-card__logo" />
+            <p class="franchise-card__desc">El universo de superhéroes más grande.</p>
+          </article>
+ 
+          <article class="franchise-card">
+            <img src="img/starwars.png" alt="Logotipo de Star Wars" class="franchise-card__logo" />
+            <p class="franchise-card__desc">Una galaxia muy, muy lejana.</p>
+          </article>
+ 
+          <article class="franchise-card">
+            <img src="img/natgeo.png" alt="Logotipo de National Geographic" class="franchise-card__logo" />
+            <p class="franchise-card__desc">Explora el mundo y sus maravillas.</p>
+          </article>
+ 
+        </div>
+      </section>
+ 
+      <!-- SECCIÓN DE CARACTERÍSTICAS / BENEFICIOS -->
+      <section class="features">
+        <h2 class="features__title">¿Por qué Disney+?</h2>
+        <div class="features__grid">
+ 
+          <div class="feature-item">
+            <img src="img/icon-devices.png" alt="Ícono de múltiples dispositivos" class="feature-item__icon" />
+            <h3>4 pantallas simultáneas</h3>
+            <p>Mirá en tu TV, tablet, celular o computadora al mismo tiempo.</p>
+          </div>
+ 
+          <div class="feature-item">
+            <img src="img/icon-download.png" alt="Ícono de descarga de contenido" class="feature-item__icon" />
+            <h3>Descargá contenido</h3>
+            <p>Guardá tus películas y series favoritas para verlas sin conexión.</p>
+          </div>
+ 
+          <div class="feature-item">
+            <img src="img/icon-noads.png" alt="Ícono de sin publicidad" class="feature-item__icon" />
+            <h3>Sin interrupciones</h3>
+            <p>Disfrutá tus contenidos sin cortes publicitarios.</p>
+          </div>
+ 
+        </div>
+      </section>
+    </main>
+ 
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__content">
+        <img src="img/disneyplus-logo.png" alt="Logo de Disney+" class="footer__logo" />
+        <nav class="footer__links">
+          <a href="#">Ayuda</a>
+          <a href="#">Términos de uso</a>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Sobre nosotros</a>
+        </nav>
+        <p class="footer__copy">© 2024 Disney. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+ 
+  </body>
+</html>
